@@ -11,4 +11,16 @@ describe("TodoListComponent", () => {
         expect(controller).toBeInstanceOf(TodoListController)
     })
 
+    it("Should add a todo item", () => {
+        const todo = {
+            name: "Learn Programming using component based approach",
+            completed: false
+        }
+        controller.todosList = []
+
+        controller.addTodo(todo)
+
+        expect(controller.todosList.length).toBe(1)
+        expect(controller.todosList[0]).toEqual(todo)
+    })
 })
